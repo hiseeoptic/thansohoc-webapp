@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', // Quan trọng cho deploy Vercel
+  base: '/thansohoc-webapp/', // Quan trọng cho deploy Vercel
   server: {
     port: 3000,
     host: '0.0.0.0',
