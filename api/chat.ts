@@ -1,10 +1,10 @@
-// api/chat.ts (tương tự, nhưng hỗ trợ messages array cho chat history)
+
 import OpenAI from 'openai';
 
 export default async function handler(req: Request) {
   if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
 
-  const { messages, context } = await req.json();  // messages là array [{role, content}]
+  const { messages, context } = await req.json();  
   const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey) return new Response('API Key not configured', { status: 500 });
