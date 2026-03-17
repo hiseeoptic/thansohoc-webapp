@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  base: '/', // Quan trọng cho deploy Vercel
   server: {
     port: 3000,
     host: '0.0.0.0',
@@ -12,5 +13,9 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, '.'),
     }
+  },
+  build: {
+    outDir: 'dist', // Đảm bảo output folder là dist
+    emptyOutDir: true // Xóa dist cũ trước khi build
   }
 });
